@@ -1,0 +1,97 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Alegreya"; }
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  font-style: italic; }
+
+h1 {
+  font-size: 25px; }
+
+h2 {
+  font-size: 22px; }
+
+h3 {
+  font-size: 18px; }
+
+p {
+  font-size: 18px;
+  font-weight: 400; }
+
+a {
+  text-decoration: none;
+  color: #b30000; }
+
+.recipe-wrapper {
+  position: relative; }
+  .recipe-wrapper .recipe-img {
+    width: 100vw;
+    height: 40vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0; }
+  .recipe-wrapper .recipe-info {
+    position: relative;
+    margin-top: 40vh;
+    padding: 15px;
+    background-color: white;
+    z-index: 100;
+    box-shadow: 0 -20px 24px rgba(0, 0, 0, 0.3); }
+    .recipe-wrapper .recipe-info .recipe-title {
+      margin-top: 5px; }
+    .recipe-wrapper .recipe-info .recipe-category {
+      display: inline;
+      position: absolute;
+      top: -38px;
+      right: 15px;
+      padding: 4px 10px;
+      color: #b30000;
+      background-color: #fff;
+      border-radius: 3px;
+      border: 1px solid #b30000; }
+    .recipe-wrapper .recipe-info .ingridient-list {
+      padding: 0px 12px 15px 12px;
+      border: 1px solid #b30000;
+      border-radius: 15px; }
+      .recipe-wrapper .recipe-info .ingridient-list .ingredients-title {
+        margin-bottom: 0;
+        color: #b30000;
+        text-align: center; }
+      .recipe-wrapper .recipe-info .ingridient-list div {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px dotted black; }
+        .recipe-wrapper .recipe-info .ingridient-list div p {
+          padding: 8px;
+          margin: 3px 0; }
+    .recipe-wrapper .recipe-info .instructions-container {
+      position: relative;
+      height: 225px;
+      overflow: hidden;
+      border-bottom: 1px solid #b30000;
+      box-shadow: inset 0px -60px 36px -27px white; }
+      .recipe-wrapper .recipe-info .instructions-container .instructions-title {
+        margin-bottom: 0; }
+      .recipe-wrapper .recipe-info .instructions-container .instructions {
+        margin-top: 5px;
+        position: relative;
+        z-index: -1; }
+      .recipe-wrapper .recipe-info .instructions-container .read-more {
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 2px 15px;
+        font-size: 18px;
+        font-weight: 700;
+        font-style: italic;
+        color: white;
+        background-color: #b30000; }

@@ -1,0 +1,122 @@
+$height: 40vh;
+$accent1: rgb(179, 0, 0);
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Alegreya";
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  font-style: italic;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: $accent1;
+}
+
+.recipe-wrapper {
+  position: relative;
+  .recipe-img {
+    width: 100vw;
+    height: $height;
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+  }
+  .recipe-info {
+    position: relative;
+    margin-top: 40vh;
+    padding: 15px;
+    background-color: white;
+    z-index: 100;
+    box-shadow: 0 -20px 24px rgba(0, 0, 0, 0.3);
+    .recipe-title {
+      margin-top: 5px;
+    }
+    .recipe-category {
+      display: inline;
+      position: absolute;
+      top: -38px;
+      right: 15px;
+      padding: 4px 10px;
+      color: $accent1;
+      background-color: #fff;
+      border-radius: 3px;
+      border: 1px solid $accent1;
+    }
+    .ingridient-list {
+      padding: 0px 12px 15px 12px;
+      border: 1px solid $accent1;
+      border-radius: 15px;
+      .ingredients-title {
+        margin-bottom: 0;
+        color: $accent1;
+        text-align: center;
+      }
+      div {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px dotted black;
+        p {
+          padding: 8px;
+          margin: 3px 0;
+        }
+      }
+    }
+    .instructions-container {
+    position: relative;
+      height: 225px;
+      overflow: hidden;
+      border-bottom: 1px solid $accent1;
+      box-shadow: inset 0px -60px 36px -27px rgba(255, 255, 255, 1);
+      .instructions-title {
+        margin-bottom: 0;
+      }
+      .instructions {
+        margin-top: 5px;
+        position: relative;
+        z-index: -1;
+      }
+      .read-more {
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 2px 15px;
+        font-size: 18px;
+        font-weight: 700;
+        font-style: italic;
+        color: white;
+        background-color: $accent1;
+      }
+    }
+    .original-recipe {
+    }
+  }
+}
