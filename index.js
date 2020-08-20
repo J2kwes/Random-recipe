@@ -30,7 +30,7 @@ function getRecipe(data) {
     and links it to the DOM.
 */
 
-async function setRecipe(data) {
+function setRecipe(data) {
   /* 
     checkValue() checks to see if the individual strings inside
     of an array contain valid values(in this case not empty). only
@@ -44,14 +44,38 @@ async function setRecipe(data) {
     }
   }
 
+  /* 
+    createArray() takes a string as its first parameter.
+    The string is then split by the value of the second parmeter.
+    Each part of the string is stored in an array wich is 
+    returend by the function
+  */
+
+  function createArray(string, splitBy) {
+    if (checkValue(string)) {
+      const arr = string.split(splitBy);
+      return arr;
+    }
+  }
+
+  //DOM elements for future reference:
   const recipeImg = document.querySelector(".recipe-img");
   const recipeTitle = document.querySelector(".recipe-title");
   const recipeCat = document.querySelector(".recipe-category");
-  const ingridientList = document.querySelector(".ingridient-list");
+  const tagRow = document.querySelector(".tags");
+  const ingredientList = document.querySelector(".ingredient-list");
+  const instructionsContainer = document.querySelector(
+    ".instructions-container"
+  );
   const instructions = document.querySelector(".instructions");
   const readMore = document.querySelector(".read-more");
+  const recipeOriginBg = document.querySelector(".recipe-bg");
+  const originalRecipeBtn = document.querySelector(".original-recipe");
 
-  let ingridients = [
+  // API data arrays:
+  const tags = createArray(data.strTags, ",");
+
+  let ingredients = [
     data.strIngredient1,
     data.strIngredient2,
     data.strIngredient3,
@@ -97,34 +121,45 @@ async function setRecipe(data) {
     data.strMeasure20,
   ];
 
-  ingridients = ingridients.filter((str) => checkValue(str));
+  // Remove empty strings from arrays:
+  ingredients = ingredients.filter((str) => checkValue(str));
   measures = measures.filter((str) => checkValue(str));
 
-  for (i = 0; i < ingridients.length; i++) {
+  // DOM manipulation:
+  for (i = 0; i < ingredients.length; i++) {
     const row = document.createElement("div");
     const ing = document.createElement("p");
     const mes = document.createElement("p");
-    const ingText = document.createTextNode(ingridients[i] + ":");
+    const ingText = document.createTextNode(ingredients[i] + ":");
     const mesText = document.createTextNode(measures[i]);
 
     ing.appendChild(ingText);
     mes.appendChild(mesText);
+    mes.classList.add("align-right");
     row.appendChild(ing);
     row.appendChild(mes);
-    ingridientList.appendChild(row);
+    ingredientList.appendChild(row);
+  }
+
+  if (tags) {
+    for (i = 0; i < tags.length; i++) {
+      const tag = document.createElement("span");
+      const tagText = document.createTextNode(tags[i]);
+
+      tag.appendChild(tagText);
+      tagRow.appendChild(tag);
+    }
   }
 
   recipeImg.src = data.strMealThumb;
   recipeTitle.innerHTML = data.strMeal;
   recipeCat.innerHTML = data.strCategory;
   instructions.innerHTML = data.strInstructions;
-  readMore.onclick = function (e) {
-    console.log('click');
+  recipeOriginBg.style.backgroundImage = "url(" + data.strMealThumb + ")";
+  originalRecipeBtn.href = data.strSource;
+  readMore.onclick = function () {
+    instructionsContainer.classList.add("extended");
   };
-
-  console.log(data);
-  console.log(ingridients);
-  console.log(measures);
 }
 
 fetchData();
