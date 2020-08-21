@@ -33,7 +33,7 @@ function getRecipe(data) {
 function setRecipe(data) {
   /* 
     checkValue() checks to see if the individual strings inside
-    of an array contain valid values(in this case not empty). only
+    of an array contain valid values (in this case meaning not empty). only
     if a string contains atleast one character is it returned to 
     the array.
   */
@@ -46,9 +46,9 @@ function setRecipe(data) {
 
   /* 
     createArray() takes a string as its first parameter.
-    The string is then split by the value of the second parmeter.
+    The string is then split by the value of the second parameter.
     Each part of the string is stored in an array wich is 
-    returend by the function
+    returned by the function.
   */
 
   function createArray(string, splitBy) {

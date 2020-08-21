@@ -145,6 +145,13 @@ a {
     border-radius: 3px;
     cursor: pointer; }
 
+@media only screen and (min-width: 560px) {
+  .recipe-wrapper .recipe-info .instructions-container {
+    height: auto;
+    box-shadow: none; }
+    .recipe-wrapper .recipe-info .instructions-container .read-more {
+      display: none; } }
+
 @media only screen and (min-width: 768px) {
   h1 {
     font-size: 40px; }
@@ -155,6 +162,29 @@ a {
   p {
     font-size: 20px;
     font-weight: 400; }
+  .recipe-wrapper .recipe-info .recipe-category {
+    top: -50px; }
+  .recipe-wrapper .recipe-info .recipe-title {
+    width: 50vw;
+    margin-bottom: -15px; }
+  .recipe-wrapper .recipe-info .tags {
+    width: 50vw;
+    margin-top: 25px; }
+  .recipe-wrapper .recipe-info .ingredient-list {
+    position: absolute;
+    right: 15px;
+    width: 40vw; }
+  .recipe-wrapper .recipe-info .instructions-container {
+    width: 50vw; }
+    .recipe-wrapper .recipe-info .instructions-container .instructions-title {
+      margin-top: 0; }
+  .recipe-wrapper .recipe-origin {
+    width: 55vw;
+    height: 80px; }
+    .recipe-wrapper .recipe-origin .recipe-bg {
+      display: none; } }
+
+@media only screen and (min-width: 1140px) {
   .recipe-wrapper {
     position: relative; }
     .recipe-wrapper .recipe-img {
@@ -177,35 +207,23 @@ a {
         top: 5px;
         right: 625px; }
       .recipe-wrapper .recipe-info .recipe-title {
-        width: 380px;
-        margin-bottom: -15px; }
-      .recipe-wrapper .recipe-info .tags {
-        margin-top: 25px; }
+        width: 380px; }
       .recipe-wrapper .recipe-info .ingredient-list {
-        position: absolute;
+        top: 370px;
         right: 15px;
         width: 474px;
-        top: 370px;
         background-color: white;
         border-top: none; }
       .recipe-wrapper .recipe-info .instructions-container {
-        width: 500px;
-        height: auto;
-        box-shadow: none; }
-        .recipe-wrapper .recipe-info .instructions-container .instructions-title {
-          margin-top: 0; }
-        .recipe-wrapper .recipe-info .instructions-container .read-more {
-          display: none; }
+        width: 500px; }
     .recipe-wrapper .recipe-origin {
-      width: 550px; }
-      .recipe-wrapper .recipe-origin .recipe-bg {
-        display: none; } }
+      width: 550px; } }
 
 @keyframes extend-animation {
   0% {
     height: 225px; }
   99% {
-    height: 350px; }
+    height: 550px; }
   100% {
     height: auto;
     box-shadow: none; } }

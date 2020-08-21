@@ -178,6 +178,20 @@ a {
   }
 }
 
+@media only screen and(min-width: 560px) {
+  .recipe-wrapper {
+    .recipe-info {
+      .instructions-container {
+        height: auto;
+        box-shadow: none;
+        .read-more {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
 @media only screen and(min-width: 768px) {
   h1 {
     font-size: 40px;
@@ -196,6 +210,42 @@ a {
     font-weight: 400;
   }
 
+  .recipe-wrapper {
+    .recipe-info {
+      .recipe-category {
+        top: -50px;
+      }
+      .recipe-title {
+        width: 50vw;
+        margin-bottom: -15px;
+      }
+      .tags {
+        width: 50vw;
+        margin-top: 25px;
+      }
+      .ingredient-list {
+        position: absolute;
+        right: 15px;
+        width: 40vw;
+      }
+      .instructions-container {
+        width: 50vw;
+        .instructions-title {
+          margin-top: 0;
+        }
+      }
+    }
+    .recipe-origin {
+      width: 55vw;
+      height: 80px;
+      .recipe-bg {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and(min-width: 1140px) {
   .recipe-wrapper {
     position: relative;
     .recipe-img {
@@ -221,36 +271,20 @@ a {
       }
       .recipe-title {
         width: 380px;
-        margin-bottom: -15px;
-      }
-      .tags {
-        margin-top: 25px;
       }
       .ingredient-list {
-        position: absolute;
+        top: 370px;
         right: 15px;
         width: 474px;
-        top: 370px;
         background-color: white;
         border-top: none;
       }
       .instructions-container {
         width: 500px;
-        height: auto;
-        box-shadow: none;
-        .instructions-title {
-          margin-top: 0;
-        }
-        .read-more {
-          display: none;
-        }
       }
     }
     .recipe-origin {
       width: 550px;
-      .recipe-bg {
-        display: none;
-      }
     }
   }
 }
@@ -260,7 +294,7 @@ a {
     height: $instructionsHeight;
   }
   99% {
-    height: 350px;
+    height: 550px;
   }
   100% {
     height: auto;
