@@ -57,7 +57,7 @@ a {
   }
   .recipe-info {
     position: relative;
-    margin: $height 0 25px 0;
+    margin: $height 0 25px 0; //sets margin-top equal to the height of the recipe-img
     padding: 15px 15px 0 15px;
     background-color: white;
     z-index: 100;

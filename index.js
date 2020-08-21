@@ -15,7 +15,7 @@ async function fetchData() {
 
 /*  
     getRecipe() gets the data array from fecthData().
-    in the array is a nested object wich contains all meal data.
+    in the array is a nested object which contains all meal data.
     To get to this object we loop through the array and call the 
     setRecipe() function on all nested objects.
 */
