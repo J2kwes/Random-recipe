@@ -1,4 +1,5 @@
 $height: 40vh;
+$landscapeHeight: 60vh;
 $instructionsHeight: 225px;
 $accent1: rgb(179, 0, 0);
 
@@ -192,6 +193,17 @@ a {
   }
 }
 
+@media only screen and(min-width: 560px) and (orientation: landscape) {
+  .recipe-wrapper {
+    .recipe-img {
+      height: $landscapeHeight;
+    }
+    .recipe-info {
+      margin: $landscapeHeight 0 25px 0;
+    }
+  }
+}
+
 @media only screen and(min-width: 768px) {
   h1 {
     font-size: 40px;
@@ -270,7 +282,7 @@ a {
         right: 625px;
       }
       .recipe-title {
-        width: 380px;
+        width: 330px;
       }
       .ingredient-list {
         top: 370px;

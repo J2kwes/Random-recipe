@@ -152,6 +152,12 @@ a {
     .recipe-wrapper .recipe-info .instructions-container .read-more {
       display: none; } }
 
+@media only screen and (min-width: 560px) and (orientation: landscape) {
+  .recipe-wrapper .recipe-img {
+    height: 60vh; }
+  .recipe-wrapper .recipe-info {
+    margin: 60vh 0 25px 0; } }
+
 @media only screen and (min-width: 768px) {
   h1 {
     font-size: 40px; }
@@ -207,7 +213,7 @@ a {
         top: 5px;
         right: 625px; }
       .recipe-wrapper .recipe-info .recipe-title {
-        width: 380px; }
+        width: 330px; }
       .recipe-wrapper .recipe-info .ingredient-list {
         top: 370px;
         right: 15px;
