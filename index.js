@@ -1,8 +1,22 @@
+//DOM elements for future reference:
+const recipeImg = document.querySelector(".recipe-img");
+const recipeTitle = document.querySelector(".recipe-title");
+const recipeCat = document.querySelector(".recipe-category");
+const tagRow = document.querySelector(".tags");
+const ingredientList = document.querySelector(".ingredient-list");
+const instructionsContainer = document.querySelector(
+  ".instructions-container"
+);
+const instructions = document.querySelector(".instructions");
+const readMore = document.querySelector(".read-more");
+const recipeOriginBg = document.querySelector(".recipe-bg");
+const originalRecipeBtn = document.querySelector(".original-recipe");
+
+
 /*  
     fetchData() sends a GET request to the mealdb api. 
     The data is then passed on to the getRecipe() funcion
 */
-
 async function fetchData() {
   let apiData = await axios
     .get("https://www.themealdb.com/api/json/v1/1/random.php")
@@ -19,7 +33,6 @@ async function fetchData() {
     To get to this object we loop through the array and call the 
     setRecipe() function on all nested objects.
 */
-
 function getRecipe(data) {
   const recipe = data;
   recipe.map((recipe) => setRecipe(recipe));
@@ -29,51 +42,9 @@ function getRecipe(data) {
     setRecipe() takes the data from the JSON object
     and links it to the DOM.
 */
-
 function setRecipe(data) {
-  /* 
-    checkValue() checks to see if the individual strings inside
-    of an array contain valid values (in this case meaning not empty). only
-    if a string contains atleast one character is it returned to 
-    the array.
-  */
-
-  function checkValue(string) {
-    if (string != "" && string != null) {
-      return string;
-    }
-  }
-
-  /* 
-    createArray() takes a string as its first parameter.
-    The string is then split by the value of the second parameter.
-    Each part of the string is stored in an array wich is 
-    returned by the function.
-  */
-
-  function createArray(string, splitBy) {
-    if (checkValue(string)) {
-      const arr = string.split(splitBy);
-      return arr;
-    }
-  }
-
-  //DOM elements for future reference:
-  const recipeImg = document.querySelector(".recipe-img");
-  const recipeTitle = document.querySelector(".recipe-title");
-  const recipeCat = document.querySelector(".recipe-category");
-  const tagRow = document.querySelector(".tags");
-  const ingredientList = document.querySelector(".ingredient-list");
-  const instructionsContainer = document.querySelector(
-    ".instructions-container"
-  );
-  const instructions = document.querySelector(".instructions");
-  const readMore = document.querySelector(".read-more");
-  const recipeOriginBg = document.querySelector(".recipe-bg");
-  const originalRecipeBtn = document.querySelector(".original-recipe");
-
   // API data arrays:
-  const tags = createArray(data.strTags, ",");
+  const tags = splitString(data.strTags, ",");
 
   let ingredients = [
     data.strIngredient1,
@@ -160,6 +131,31 @@ function setRecipe(data) {
   readMore.onclick = function () {
     instructionsContainer.classList.add("extended");
   };
+}
+
+/* 
+    checkValue() checks to see if the individual strings inside
+    of an array contain valid values (in this case meaning not empty). only
+    if a string contains atleast one character is it returned to 
+    the array.
+*/
+function checkValue(string) {
+  if (string != "" && string != null) {
+    return string;
+  }
+}
+
+/* 
+  splitString() takes a string as its first parameter.
+  The string is then split by the value of the second parameter.
+  Each part of the string is stored in an array wich is 
+  returned by the function.
+*/
+function splitString(string, splitBy) {
+  if (checkValue(string)) {
+    const arr = string.split(splitBy);
+    return arr;
+  }
 }
 
 fetchData();
